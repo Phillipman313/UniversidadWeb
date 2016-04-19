@@ -1,0 +1,58 @@
+﻿@model UniversidadWeb.Models.Matricula
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Matricula</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CodMatricula)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodMatricula)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Monto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Monto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estudiante.Cod_Estudiante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estudiante.Cod_Estudiante)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Periodo.Id_Periodo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Periodo.Id_Periodo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id_Matricula }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
