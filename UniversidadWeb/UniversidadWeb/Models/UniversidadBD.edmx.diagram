@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="37815f325eed47f592dd372f28300fd5" Name="Diagram1">
+        <EntityTypeShape EntityType="UniversidadBDModel.Anyo" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversidadBDModel.Beca" Width="1.5" PointX="10.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversidadBDModel.Bloque" Width="1.5" PointX="7.5" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversidadBDModel.Carrera" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversidadBDModel.CarrerasSedes" Width="1.5" PointX="5.25" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversidadBDModel.Ciclo" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversidadBDModel.Curso" Width="1.5" PointX="3" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversidadBDModel.Curso_Estudiante" Width="1.5" PointX="7.5" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversidadBDModel.CursoLectivo" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversidadBDModel.DiaSemana" Width="1.5" PointX="8.25" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversidadBDModel.Estudiante" Width="1.5" PointX="5.25" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversidadBDModel.Horario" Width="1.5" PointX="10.5" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversidadBDModel.Matricula" Width="1.5" PointX="8.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversidadBDModel.MatriculaCurso" Width="1.5" PointX="10.5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversidadBDModel.Periodo" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversidadBDModel.PlanEstudio" Width="1.5" PointX="5.25" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversidadBDModel.Profesor" Width="1.5" PointX="3" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversidadBDModel.Requisito" Width="1.5" PointX="9.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversidadBDModel.Sede" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversidadBDModel.Temario" Width="1.5" PointX="5.25" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversidadBDModel.TipoBeca" Width="1.5" PointX="11.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversidadBDModel.Universidad" Width="1.5" PointX="1.5" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="UniversidadBDModel.FK_Periodo_Anyo" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversidadBDModel.FK_Bloque_Curso" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversidadBDModel.FK_Bloque_PlanEstudio" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversidadBDModel.FK_Requisito_Bloque" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversidadBDModel.FK_Carrera_Ciclo" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversidadBDModel.FK_CarrerasSedes_Carrera" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversidadBDModel.FK_PlanEstudio_Carrera" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversidadBDModel.FK_CarrerasSedes_Sede" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversidadBDModel.FK_Periodo_Ciclo" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversidadBDModel.FK_CursoLectivo_Curso" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversidadBDModel.FK_Temario_Curso" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversidadBDModel.FK_Curso_Estudiante_CursoLectivo" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversidadBDModel.FK_Curso_Estudiante_Estudiante" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversidadBDModel.FK_MatriculaCurso_Curso_Estudiante" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversidadBDModel.FK_CursoLectivo_Periodo" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversidadBDModel.FK_CursoLectivo_Profesor" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversidadBDModel.FK_Horario_CursoLectivo" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversidadBDModel.FK_Horario_DiaSemana" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversidadBDModel.FK_Matricula_Estudiante" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversidadBDModel.FK_Matricula_Periodo" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversidadBDModel.FK_MatriculaCurso_Matricula" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversidadBDModel.FK_Periodo_Sede" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversidadBDModel.FK_Sede_Universidad" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

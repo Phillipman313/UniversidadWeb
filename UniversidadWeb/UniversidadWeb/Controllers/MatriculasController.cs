@@ -12,7 +12,7 @@ namespace UniversidadWeb.Controllers
 {
     public class MatriculasController : Controller
     {
-        private UniversidadEntities db = new UniversidadEntities();
+        private UniversidadBDEntities db = new UniversidadBDEntities();
 
         // GET: Matriculas
         public ActionResult Index()
