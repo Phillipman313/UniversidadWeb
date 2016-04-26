@@ -1,0 +1,63 @@
+﻿@model IEnumerable<UniversidadWeb.Models.Periodo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Orden)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaInicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaFinal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Anyo.Anyo1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ciclo.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sede.Nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Orden)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaInicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaFinal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Anyo.Anyo1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ciclo.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sede.Nombre)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id_Periodo }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id_Periodo }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id_Periodo })
+        </td>
+    </tr>
+}
+
+</table>
