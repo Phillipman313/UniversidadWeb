@@ -206,6 +206,7 @@
     <Compile Include="Controllers\MatriculaCursoesController.cs" />
     <Compile Include="Controllers\MatriculasController.cs" />
     <Compile Include="Controllers\PeriodosController.cs" />
+    <Compile Include="Controllers\ProfesoresController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -307,6 +308,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\pm.png" />
     <Content Include="Models\UniversidadBD.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>UniversidadBD.edmx</DependentUpon>
@@ -416,6 +418,11 @@
     <Content Include="Views\Periodos\Edit.cshtml" />
     <Content Include="Views\Periodos\Index.cshtml" />
     <Content Include="Views\Periodos\Details.cshtml" />
+    <Content Include="Views\Profesores\Create.cshtml" />
+    <Content Include="Views\Profesores\Delete.cshtml" />
+    <Content Include="Views\Profesores\Details.cshtml" />
+    <Content Include="Views\Profesores\Edit.cshtml" />
+    <Content Include="Views\Profesores\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

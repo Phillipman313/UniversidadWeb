@@ -37,9 +37,13 @@ namespace UniversidadWeb.Controllers
         }
 
         // GET: Curso_Estudiante
-        public ActionResult Index()
+        public ActionResult Index(int? idCursoLectivo)
         {
             var curso_Estudiante = db.Curso_Estudiante.Include(c => c.CursoLectivo).Include(c => c.Estudiante);
+            if (idCursoLectivo != null)
+            {
+                curso_Estudiante = curso_Estudiante.Where(x => x.Id_CursoLectivo == idCursoLectivo);
+            }
             return View(curso_Estudiante.ToList());
         }
 
@@ -115,7 +119,7 @@ namespace UniversidadWeb.Controllers
             {
                 db.Entry(curso_Estudiante).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { idCursoLectivo = curso_Estudiante.Id_CursoLectivo });
             }
             ViewBag.Id_CursoLectivo = new SelectList(db.CursoLectivo, "Id_CursoLectivo", "CursoLectivo1", curso_Estudiante.Id_CursoLectivo);
             ViewBag.Id_Estudiante = new SelectList(db.Estudiante, "Id_Estudiante", "Cod_Estudiante", curso_Estudiante.Id_Estudiante);

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<UniversidadWeb.Models.Profesor>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CodProfesor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellido1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellido2)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodProfesor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apellido1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apellido2)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id_Profesor }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id_Profesor }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id_Profesor })
+        </td>
+    </tr>
+}
+
+</table>

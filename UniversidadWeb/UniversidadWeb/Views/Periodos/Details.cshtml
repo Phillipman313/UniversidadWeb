@@ -119,11 +119,12 @@
 
             grid.Column(format: (item) =>
             {
-                WebGrid grupos = new WebGrid(source: item.CursoLectivo);
+                WebGrid grupos = new WebGrid(source: item.CursoLectivo, canSort: false);
                 return grupos.GetHtml(
                     htmlAttributes: new { id = "subT" },
                     columns: grupos.Columns(
-                            grupos.Column("Grupo", "Grupo", parte => parte.CursoLectivo1)
+                            grupos.Column("Grupo", "Grupo", parte => @Html.ActionLink("Grupo", "Index", "Curso_Estudiante", new { idCursoLectivo = parte.Id_CursoLectivo}, null)),
+                            grupos.Column("Horario", "Horario", parte => parte.horas.HoraInicio + " - " + parte.horas.HoraFin + " " + parte.horas.DiaSemana.Codigo)
                         )
                     );
             })
