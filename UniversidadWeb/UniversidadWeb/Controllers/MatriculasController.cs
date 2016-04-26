@@ -29,12 +29,20 @@ namespace UniversidadWeb.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Matricula matricula = db.Matricula.Find(id);
-            if (matricula == null)
+            int codigoMatricula = db.Matricula.Where(i => i.Id_Estudiante == id).Select(p => p.Id_Matricula).First();
+
+            var response = new List<object>();
+
+            response.Add(new { Title = "Response", Content = codigoMatricula });
+
+            if (codigoMatricula == null)
             {
                 return HttpNotFound();
             }
-            return View(matricula);
+            //return View(matricula.ToList());
+            //return new HttpStatusCodeResult(HttpStatusCode.OK);
+            //return matricula.ToString();
+            return Json(response, JsonRequestBehavior.AllowGet);
         }
 
         // GET: Matriculas/Create

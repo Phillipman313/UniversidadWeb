@@ -199,8 +199,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Curso_EstudianteController.cs" />
+    <Compile Include="Controllers\EstudiantesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MatriculaCursoesController.cs" />
     <Compile Include="Controllers\MatriculasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -313,6 +316,7 @@
     </Content>
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="Scripts\App.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -389,6 +393,21 @@
     <Content Include="Views\Matriculas\Edit.cshtml" />
     <Content Include="Views\Matriculas\Index.cshtml" />
     <Content Include="Scripts\jquery-2.2.3.min.map" />
+    <Content Include="Views\Estudiantes\Create.cshtml" />
+    <Content Include="Views\Estudiantes\Delete.cshtml" />
+    <Content Include="Views\Estudiantes\Details.cshtml" />
+    <Content Include="Views\Estudiantes\Edit.cshtml" />
+    <Content Include="Views\Estudiantes\Index.cshtml" />
+    <Content Include="Views\MatriculaCursoes\Create.cshtml" />
+    <Content Include="Views\MatriculaCursoes\Delete.cshtml" />
+    <Content Include="Views\MatriculaCursoes\Details.cshtml" />
+    <Content Include="Views\MatriculaCursoes\Edit.cshtml" />
+    <Content Include="Views\MatriculaCursoes\Index.cshtml" />
+    <Content Include="Views\Curso_Estudiante\Create.cshtml" />
+    <Content Include="Views\Curso_Estudiante\Delete.cshtml" />
+    <Content Include="Views\Curso_Estudiante\Details.cshtml" />
+    <Content Include="Views\Curso_Estudiante\Edit.cshtml" />
+    <Content Include="Views\Curso_Estudiante\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
