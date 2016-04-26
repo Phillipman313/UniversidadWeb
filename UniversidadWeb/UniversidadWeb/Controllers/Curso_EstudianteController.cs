@@ -14,6 +14,28 @@ namespace UniversidadWeb.Controllers
     {
         private UniversidadBDEntities db = new UniversidadBDEntities();
 
+        public ActionResult getCursoEstudianteID(int? id) {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+           
+            try
+            {
+               int idCursoEstudiante = db.Curso_Estudiante.Where(i => i.Id_Estudiante == id).Select(p => p.Id_CursoEstudiante).First();
+
+               var response = new List<object>();
+
+               response.Add(new { Title = "Response", Content = idCursoEstudiante });
+
+               return Json(response, JsonRequestBehavior.AllowGet);
+            }
+            catch (System.InvalidOperationException e)
+            {
+               return new HttpStatusCodeResult(HttpStatusCode.NotFound);
+            }
+        }
+
         // GET: Curso_Estudiante
         public ActionResult Index()
         {

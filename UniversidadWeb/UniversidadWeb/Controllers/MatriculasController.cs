@@ -14,6 +14,68 @@ namespace UniversidadWeb.Controllers
     {
         private UniversidadBDEntities db = new UniversidadBDEntities();
 
+        [HttpPost]
+        public ActionResult increaseEnrollmentAmount(int? id) {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            try
+            {
+                Matricula matricula = db.Matricula.Find(id);
+
+                matricula.Monto = matricula.Monto + 80000;
+
+                if (ModelState.IsValid)
+                {
+                    db.Entry(matricula).State = EntityState.Modified;
+                    //db.Matricula.Add(matricula);
+                    db.SaveChanges();
+                    return RedirectToAction("Details", new { id = matricula.Id_Matricula });
+                }
+
+                // var response = new List<object>();
+
+                //response.Add(new { Title = "Response", Content = codigoMatricula });
+
+                //return View(matricula.ToList());
+                //return new HttpStatusCodeResult(HttpStatusCode.OK);
+                //return matricula.ToString();
+                //return Json(response, JsonRequestBehavior.AllowGet);
+                return new HttpStatusCodeResult(HttpStatusCode.NotFound);
+            }
+            catch (System.InvalidOperationException e)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.NotFound);
+            }
+        }
+
+        public ActionResult getMatriculaID(int? id) {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            try
+            {
+                int codigoMatricula = db.Matricula.Where(i => i.Id_Estudiante == id).Select(p => p.Id_Matricula).First();
+
+                var response = new List<object>();
+
+                response.Add(new { Title = "Response", Content = codigoMatricula });
+
+                //return View(matricula.ToList());
+                //return new HttpStatusCodeResult(HttpStatusCode.OK);
+                //return matricula.ToString();
+                return Json(response, JsonRequestBehavior.AllowGet);
+            }
+            catch (System.InvalidOperationException e)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.NotFound);
+            }
+        }
+
         // GET: Matriculas
         public ActionResult Index()
         {
@@ -29,20 +91,13 @@ namespace UniversidadWeb.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            int codigoMatricula = db.Matricula.Where(i => i.Id_Estudiante == id).Select(p => p.Id_Matricula).First();
-
-            var response = new List<object>();
-
-            response.Add(new { Title = "Response", Content = codigoMatricula });
-
-            if (codigoMatricula == null)
+            Matricula matricula = db.Matricula.Find(id);
+            if (matricula == null)
             {
                 return HttpNotFound();
             }
-            //return View(matricula.ToList());
-            //return new HttpStatusCodeResult(HttpStatusCode.OK);
-            //return matricula.ToString();
-            return Json(response, JsonRequestBehavior.AllowGet);
+            return View(matricula);
+
         }
 
         // GET: Matriculas/Create
@@ -57,11 +112,12 @@ namespace UniversidadWeb.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id_Matricula,CodMatricula,Id_Periodo,Id_Estudiante,Estado,Monto")] Matricula matricula)
         {
             if (ModelState.IsValid)
             {
+            
                 db.Matricula.Add(matricula);
                 db.SaveChanges();
                 return RedirectToAction("Index");

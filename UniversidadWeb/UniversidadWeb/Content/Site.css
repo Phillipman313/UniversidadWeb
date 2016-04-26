@@ -22,3 +22,34 @@ select,
 textarea {
     max-width: 280px;
 }
+
+
+.matricula-header {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.matricula-header h1 {
+    font-size: 38px;
+    color: #2c3539;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.custom-brand {
+    color: #00ffff !important;
+    text-transform: uppercase;
+    width: inherit;
+    text-align: center
+
+}
+
+.custom-nav {
+
+    background: #001919 !important;
+    ;
+}
+
