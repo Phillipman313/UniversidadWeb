@@ -123,8 +123,8 @@
                 return grupos.GetHtml(
                     htmlAttributes: new { id = "subT" },
                     columns: grupos.Columns(
-                            grupos.Column("Grupo", "Grupo", parte => @Html.ActionLink("Grupo", "Index", "Curso_Estudiante", new { idCursoLectivo = parte.Id_CursoLectivo}, null)),
-                            grupos.Column("Horario", "Horario", parte => parte.horas.HoraInicio + " - " + parte.horas.HoraFin + " " + parte.horas.DiaSemana.Codigo)
+                            grupos.Column("Grupo", "Grupo", parte => Html.ActionLink((string) parte.CursoLectivo1, "Index", "Curso_Estudiante", new { idCursoLectivo = parte.Id_CursoLectivo}, null)),
+                            grupos.Column("Horario", "Horario", parte => Html.Raw(parte.horas.Replace("\n", "<br/>")))
                         )
                     );
             })
@@ -135,9 +135,9 @@
 @section Scripts {
 <script>
             $(document).ready(function () {
-                var size = $("#main #gridT > thead > tr >th").size(); // get total column
-                $("#main #gridT > thead > tr >th").last().remove(); // remove last column
-                $("#main #gridT > thead > tr").prepend("<th></th>"); // add one column at first for collapsible column
+                var size = $("#main #gridT > thead > tr >td").size(); // get total column
+                $("#main #gridT > thead > tr >td").last().remove(); // remove last column
+                $("#main #gridT > thead > tr").prepend("<td></td>"); // add one column at first for collapsible column
                 $("#main #gridT > tbody > tr").each(function (i, el) {
                     $(this).prepend(
                             $("<td></td>")
