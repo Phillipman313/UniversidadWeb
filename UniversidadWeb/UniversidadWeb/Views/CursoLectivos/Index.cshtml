@@ -1,0 +1,63 @@
+﻿@model IEnumerable<UniversidadWeb.Models.CursoLectivo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CursoLectivo1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Maximo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sobrante)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Curso.Cod_Curso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Periodo.Id_Periodo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Profesor.CodProfesor)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CursoLectivo1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Maximo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sobrante)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Curso.Cod_Curso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Periodo.Id_Periodo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Profesor.CodProfesor)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id_CursoLectivo }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id_CursoLectivo }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id_CursoLectivo })
+        </td>
+    </tr>
+}
+
+</table>

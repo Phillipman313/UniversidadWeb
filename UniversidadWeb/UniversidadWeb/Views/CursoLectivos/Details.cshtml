@@ -1,0 +1,82 @@
+﻿@model UniversidadWeb.Models.CursoLectivo
+
+@{
+    ViewBag.Title = Model.CursoLectivo1;
+    WebGrid grid = new WebGrid(source: Model.Curso_Estudiante, canSort: false);
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>@Model.CursoLectivo1</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CursoLectivo1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CursoLectivo1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Maximo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Maximo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sobrante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sobrante)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Curso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Curso.Cod_Curso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Periodo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Periodo.PeriodoCompleto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Profesor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Profesor.NombreCompleto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Horas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Horas)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    @grid.GetHtml(
+        htmlAttributes: new { width = "500px" },
+        columns: grid.Columns(
+            grid.Column("Estado", "Estado", item => item.Estado),
+            grid.Column("Nota", "Nota", item => item.Nota),
+            grid.Column("Estudiante", "Estudiante", item => item.Estudiante.NombreCompleto),
+            grid.Column(null, null, item => Html.ActionLink("Edit", "Edit", "Curso_Estudiante", new { id = item.Id_CursoEstudiante}, null))
+            )
+    )
+</div>

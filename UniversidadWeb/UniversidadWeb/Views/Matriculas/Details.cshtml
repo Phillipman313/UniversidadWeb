@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Details";
+    WebGrid grid = new WebGrid(source: Model.MatriculaCurso, canSort: false);
 }
 
 <h2>Details</h2>
@@ -35,7 +36,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Estudiante.Cod_Estudiante)
+            @Html.DisplayNameFor(model => model.Estudiante)
         </dt>
 
         <dd>
@@ -43,7 +44,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Periodo.Id_Periodo)
+            @Html.DisplayNameFor(model => model.Periodo)
         </dt>
 
         <dd>

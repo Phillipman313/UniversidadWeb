@@ -199,6 +199,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CursoLectivosController.cs" />
     <Compile Include="Controllers\Curso_EstudianteController.cs" />
     <Compile Include="Controllers\EstudiantesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -342,6 +343,7 @@
     <Content Include="Models\UniversidadBD.edmx.diagram">
       <DependentUpon>UniversidadBD.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\Universidad.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.3.js" />
@@ -423,6 +425,11 @@
     <Content Include="Views\Profesores\Details.cshtml" />
     <Content Include="Views\Profesores\Edit.cshtml" />
     <Content Include="Views\Profesores\Index.cshtml" />
+    <Content Include="Views\CursoLectivos\Create.cshtml" />
+    <Content Include="Views\CursoLectivos\Delete.cshtml" />
+    <Content Include="Views\CursoLectivos\Details.cshtml" />
+    <Content Include="Views\CursoLectivos\Edit.cshtml" />
+    <Content Include="Views\CursoLectivos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

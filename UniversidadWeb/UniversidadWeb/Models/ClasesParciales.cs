@@ -12,11 +12,22 @@ namespace UniversidadWeb.Models
 
     }
 
+    [MetadataType(typeof(PeriodoMetadata))]
     public partial class Periodo
     {
         public ICollection<Curso> Cursos { get; set; }
+        private string periodoCompleto;
+
+        public string PeriodoCompleto
+        {
+            get
+            {
+                return Orden + " " + Ciclo.Nombre + " " + Anyo.Anyo1 + " (" + FechaInicio + " - " + FechaFinal + ")";
+            }
+        }
     }
 
+    [MetadataType(typeof(CursoLectivoMetadata))]
     public partial class CursoLectivo
     {
         private string horas;
@@ -39,5 +50,39 @@ namespace UniversidadWeb.Models
                 return horas;
             }
         }
+    }
+
+    [MetadataType(typeof(Curso_EstudianteMetadata))]
+    public partial class Curso_Estudiante
+    {
+
+    }
+
+    public partial class Profesor
+    {
+        public string NombreCompleto
+        {
+            get
+            {
+                return Nombre + " " + Apellido1 + " " + Apellido2;
+            }
+        }
+    }
+
+    public partial class Estudiante
+    {
+        public string NombreCompleto
+        {
+            get
+            {
+                return Nombre + " " + Apellido1 + " " + Apellido2;
+            }
+        }
+    }
+
+    [MetadataType(typeof(MatriculaMetadata))]
+    public partial class Matricula
+    {
+
     }
 }

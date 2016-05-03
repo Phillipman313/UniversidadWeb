@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<UniversidadWeb.Models.Curso_Estudiante>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = ViewBag.cursoLectivo;
 }
 
-<h2>Index</h2>
+<h2>@ViewBag.cursoLectivo</h2>
 
 <table class="table">
     <tr>
@@ -15,10 +15,10 @@
             @Html.DisplayNameFor(model => model.Nota)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CursoLectivo.CursoLectivo1)
+            @Html.DisplayNameFor(model => model.CursoLectivo)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Estudiante.Cod_Estudiante)
+            @Html.DisplayNameFor(model => model.Estudiante)
         </th>
         <th></th>
     </tr>

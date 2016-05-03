@@ -1,10 +1,12 @@
 ﻿@model IEnumerable<UniversidadWeb.Models.Periodo>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Periodos";
 }
 
-<h2>Index</h2>
+<div class="matricula-header">
+    <h1>Periodos</h1>
+</div>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -24,10 +26,10 @@
             @Html.DisplayNameFor(model => model.Anyo.Anyo1)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Ciclo.Nombre)
+            @Html.DisplayNameFor(model => model.Ciclo)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Sede.Nombre)
+            @Html.DisplayNameFor(model => model.Sede)
         </th>
         <th></th>
     </tr>
